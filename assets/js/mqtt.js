@@ -56,10 +56,17 @@ function onConnectionLost(responseObject) {
 function onMessageArrived(message) {
     console.log("onMessageArrived: " + message.payloadString);
     document.getElementById("messages").innerHTML += '<span>Topic: ' + message.destinationName + '  | ' + message.payloadString + '</span><br/>';
+    document.getElementById("temperature").innerHTML += message.payloadString + '°C';
+    document.getElementById("humidity").innerHTML += message.payloadString + '%';
 }
 
 // Called when the disconnection button is pressed
 function startDisconnect() {
     client.disconnect();
     document.getElementById("messages").innerHTML += '<span>Disconnected</span><br/>';
+}
+
+function postIrrigate() {
+    client.publish("relay", "Irrigate" , 0, false)
+
 }
