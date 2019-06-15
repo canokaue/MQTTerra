@@ -34,7 +34,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.2/mqttws31.min.js" type="text/javascript"></script>
-		<script src="/assets/js/mqtt.js" type="text/javascript"></script>
+		<script src="assets/js/mqtt.js" type="text/javascript"></script>
 
 	</head>
 	<body class="is-preload">
@@ -84,7 +84,7 @@
 									<span class="image">
 										<img src="images/pic06.jpg" alt="" />
 									</span>
-									<a href="#connect" onclick="startConnect()">
+									<a href="#connect">
 										<h2>Connect</h2>
 										<div class="content">
 											<p>Establishes connection to the MQTT 3.1.1 Broker.</p>
@@ -117,7 +117,7 @@
 									<span class="image">
 										<img src="images/pic01.jpg" alt="" />
 									</span>
-									<a href="#irrigate" onclick="postIrrigate()">
+									<a href="#irrigate" onclick="relay()">
 										<h2>Irrigate</h2>
 										<div class="content">
 											<p>Open the solenoid for XX seconds, releasing aproximately XX mls of fresh water.</p>
