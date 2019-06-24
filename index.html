@@ -33,9 +33,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.2/mqttws31.min.js" type="text/javascript"></script>
-		<script src="assets/js/mqtt.js" type="text/javascript"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
+		<script src="assets/js/mqtt.js" type="text/javascript"></script>
+		<script src="assets/js/plot.js" type="text/javascript"></script>
+		
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -72,6 +76,7 @@
 
 				<!-- Main -->
 					<div id="main">
+
 						<div class="inner">
 							<header>
 								<!-- Title -->
@@ -80,17 +85,6 @@
 								<p>Here you can monitor the temperature and humidity of your MQQTerra apparatus in real time, as well as write to the subscribed irrigation topic, pouring water into the soil for X seconds.</p>
 							</header>
 							<section class="tiles">
-								<article class="style6" id = "connect">
-									<span class="image">
-										<img src="images/pic06.jpg" alt="" />
-									</span>
-									<a href="#connect">
-										<h2>Connect</h2>
-										<div class="content">
-											<p>Establishes connection to the MQTT 3.1.1 Broker.</p>
-										</div>
-									</a>
-								</article>
 								<article class="style2">
 									<span class="image">
 										<img src="images/pic02.jpg" alt="" />
