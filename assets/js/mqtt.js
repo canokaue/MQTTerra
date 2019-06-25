@@ -1,4 +1,5 @@
 
+var temperatura;
 
 connection = false;
 
@@ -51,6 +52,8 @@ function onConnect() {
     client.subscribe("/topic/plant1");
     client.subscribe("/topic/temperature");
     client.subscribe("/topic/humidity");
+    client.subscribe("/topic/distance");
+    client.subscribe("/topic/relaystatus");
 }
 
 // Called when the client loses its connection
@@ -63,16 +66,25 @@ function onConnectionLost(responseObject) {
 
 // Called when a message arrives
 function onMessageArrived(message) {
-    console.log("onMessageArrived: " + message.payloadString + "    Topic: " + message.destinationName);
-    document.getElementById("messages").innerHTML += '<span>Topic: ' + message.destinationName + '  | ' + message.payloadString + '</span><br/>';
-    document.getElementById("temperature").innerHTML += message.payloadString + '°C';
-    document.getElementById("humidity").innerHTML += message.payloadString + '%';
+    switch (message.destinationName) {
+        case '/topic/temperature':
+            document.getElementById("temperature").innerHTML = message.payloadString;
+        case '/topic/humidity':
+            document.getElementById("humidity").innerHTML = message.payloadString;
+        default:
+            console.log("onMessageArrived: " + message.payloadString + "    Topic: " + message.destinationName);
+        
+    }
+    /*console.log("onMessageArrived: " + message.payloadString + "    Topic: " + message.destinationName);
+    document.getElementById("messages").innerHTML = '<span>Topic: ' + message.destinationName + '  | ' + message.payloadString + '</span><br/>';
+    document.getElementById("temperature").innerHTML = message.payloadString + '°C';
+    document.getElementById("humidity").innerHTML = message.payloadString + '%';*/
 }
 
 // Called when the disconnection button is pressed
 function startDisconnect() {
     client.disconnect();
-    document.getElementById("messages").innerHTML += '<span>Disconnected</span><br/>';
+    document.getElementById("messages").innerHTML = '<span>Disconnected</span><br/>';
 }
 
 function relay() {
