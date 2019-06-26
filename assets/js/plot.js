@@ -3,7 +3,7 @@ var queryURL = "https://cors-anywhere.herokuapp.com/" + originalURL
 
 
 function plot(resp) {
-  console.log("plot data");
+  //console.log("plot data");
   var xaxis = [];
   var yaxis = [];
   var i;
@@ -39,22 +39,23 @@ function plot(resp) {
    //Plotly.newPlot('footer', dataWL, layout);
 }
 
-  $.ajax({
-      url: queryURL,
-      method: "GET",
-      dataType: "json",
-      // this headers section is necessary for CORS-anywhere
-      headers: {
-        "x-requested-with": "xhr" 
-      }
-    }).done(function(response) {
-      //resp.push(response);
-      console.log('CORS anywhere response', response);
-      plot(response);
-      
-    }).fail(function(jqXHR, textStatus) { 
-      console.error(textStatus)
-    })
+function fetchdata(){
+    $.ajax({
+        url: queryURL,
+        method: "GET",
+        dataType: "json",
+        // this headers section is necessary for CORS-anywhere
+        headers: {
+          "x-requested-with": "xhr" 
+        }
+      }).done(function(response) {
+        //console.log('CORS anywhere response', response);
+        plot(response);
+      }).fail(function(jqXHR, textStatus) { 
+        console.error(textStatus)
+      })
+}
 
-
-
+$(document).ready(function(){
+ setInterval(fetchdata,5000);
+});
