@@ -2,11 +2,11 @@
 
 MQTTerra is an IoT solution for plant irrigation and monitoring developed using [ESP32 development kits](https://docs.zerynth.com/latest/official/board.zerynth.doit_esp32/docs/index.html).
 
-It tracks the temperature, soil humidity and air humidity of the irrigation apparatus via topics created using a [CloudMQTT](https://www.cloudmqtt.com/) 3.1.1 Broker, to whom both endpoints are connected (web dashboard and ESP32 boards).
+It tracks the temperature, soil moisture, air humidity and water distance of the irrigation apparatus via topics created using a [CloudMQTT](https://www.cloudmqtt.com/) 3.1.1 Broker, to whom both endpoints are connected (web dashboard and ESP32 boards).
 
 App-side, Elipse Paho's [JavaScript client](https://www.eclipse.org/paho/clients/js/) was implemented so the user can interact fully regardless of platform (PC, mobile, tablet...).
 
-Authors: [André Lucas Schlichting]()(backend), [Kauê Cano Souza](https://github.com/canokaue/)(frontend).
+Authors: [André Schlichting](https://github.com/alucassch) (mainly backend), [Kauê Cano](https://github.com/canokaue/) (mainly frontend).
 
 
 
