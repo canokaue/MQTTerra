@@ -1,6 +1,7 @@
 var originalURL = "https://tranquil-forest-64117.herokuapp.com/waterlevelsjson/";
 var queryURL = "https://cors-anywhere.herokuapp.com/" + originalURL
 
+var updateplot = true;
 
 function plot(resp) {
   //console.log("plot data");
@@ -55,6 +56,7 @@ function plot(resp) {
 }
 
 function fetchdata(){
+    if (updateplot) {
     $.ajax({
         url: queryURL,
         method: "GET",
@@ -69,8 +71,23 @@ function fetchdata(){
       }).fail(function(jqXHR, textStatus) { 
         console.error(textStatus)
       })
+    }
 }
 
 $(document).ready(function(){
  setInterval(fetchdata,5000);
 });
+
+function toggle(button)
+            {
+              if(document.getElementById("autoupdateplot").value=="Update ON")
+              {
+                updateplot = false;
+               document.getElementById("autoupdateplot").value="Update OFF";
+              }
+              else
+              {
+                updateplot = true;
+                document.getElementById("autoupdateplot").value="Update ON";
+              }
+            }
