@@ -4,15 +4,21 @@
  * @ Authors: Andre Schlichting & Kaue Cano 
  * @ Create Time: 2019-06-25 21:01:19
  * @ Modified by: canokaue
- * @ Modified time: 2019-06-26 00:50:43
+ * @ Modified time: 2019-06-26 01:26:57
 
 */
 
 var temperatura;
 
-irrigating = false;
-
 connection = false;
+
+// Notification options
+Notification.requestPermission().then(function(result) {
+    console.log(result);
+  });
+var not_img = '/icons/alert.png';
+const not_title = 'Warning!';
+const not_body = 'Your reservoir is running low.';
 
 // Called on CONNECT click
 
@@ -112,8 +118,9 @@ function onMessageArrived(message) {
         document.getElementById("distance").innerHTML = message.payloadString;
         document.getElementById("distance").style.fontSize = "200%"; 
         console.log("onMessageArrived: " + message.payloadString + "    Topic: " + message.destinationName); 
-        if (parseInt(message.payloadString.substring(0,2),10) < 30) {
+        if (parseInt(message.payloadString.substring(0,2),10) > 10) {
             document.getElementById("page_title").innerHTML = "(!) MQTTerra Dashboard";
+            new Notification(not_title, { body: not_body, icon: not_img });
         }
         else {document.getElementById("page_title").innerHTML = "MQTTerra Dashboard";} }
     
