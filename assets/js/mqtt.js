@@ -4,7 +4,7 @@
  * @ Authors: Andre Schlichting & Kaue Cano 
  * @ Create Time: 2019-06-25 21:01:19
  * @ Modified by: canokaue
- * @ Modified time: 2019-06-26 01:26:57
+ * @ Modified time: 2019-06-26 01:45:30
 
 */
 
@@ -16,7 +16,7 @@ connection = false;
 Notification.requestPermission().then(function(result) {
     console.log(result);
   });
-var not_img = '/icons/alert.png';
+const not_img = '/icons/alert.png';
 const not_title = 'Warning!';
 const not_body = 'Your reservoir is running low.';
 
