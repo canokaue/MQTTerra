@@ -1,5 +1,16 @@
+/*
+			\|/ MQTTerra
+
+ * @ Authors: Andre Schlichting & Kaue Cano 
+ * @ Create Time: 2019-06-25 21:01:19
+ * @ Modified by: canokaue
+ * @ Modified time: 2019-06-26 00:50:43
+
+*/
 
 var temperatura;
+
+irrigating = false;
 
 connection = false;
 
@@ -64,22 +75,62 @@ function onConnectionLost(responseObject) {
     }
 }
 
-// Called when a message arrives
+/*
+
+// Called when a message arrives - using switch case (bugged)
 function onMessageArrived(message) {
     switch (message.destinationName) {
         case '/topic/temperature':
             document.getElementById("temperature").innerHTML = message.payloadString;
+            document.getElementById("temperature").style.fontSize = "300%";
         case '/topic/humidity':
             document.getElementById("humidity").innerHTML = message.payloadString;
+            document.getElementById("humidity").style.fontSize = "300%";
         default:
             console.log("onMessageArrived: " + message.payloadString + "    Topic: " + message.destinationName);
         
+    }
+
+*/
+function onMessageArrived(message) {
+    if (message.destinationName == '/topic/temperature') {
+            document.getElementById("temperature").innerHTML = message.payloadString;
+            document.getElementById("temperature").style.fontSize = "300%"; 
+            console.log("onMessageArrived: " + message.payloadString + "    Topic: " + message.destinationName); }
+            
+    else if (message.destinationName == '/topic/humidity') {
+            document.getElementById("humidity").innerHTML = message.payloadString;
+            document.getElementById("humidity").style.fontSize = "300%"; 
+            console.log("onMessageArrived: " + message.payloadString + "    Topic: " + message.destinationName); }
+
+    else if (message.destinationName == '/topic/plant1') {
+        document.getElementById("plant1").innerHTML = message.payloadString;
+        document.getElementById("plant1").style.fontSize = "300%"; 
+        console.log("onMessageArrived: " + message.payloadString + "    Topic: " + message.destinationName); }
+
+    else if (message.destinationName == '/topic/distance') {
+        document.getElementById("distance").innerHTML = message.payloadString;
+        document.getElementById("distance").style.fontSize = "200%"; 
+        console.log("onMessageArrived: " + message.payloadString + "    Topic: " + message.destinationName); 
+        if (parseInt(message.payloadString.substring(0,2),10) < 30) {
+            document.getElementById("page_title").innerHTML = "(!) MQTTerra Dashboard";
+        }
+        else {document.getElementById("page_title").innerHTML = "MQTTerra Dashboard";} }
+    
+    else if (message.destinationName == '/topic/relaystatus') {
+        document.getElementById("relaystatus").innerHTML = message.payloadString;
+        document.getElementById("relaystatus").style.fontSize = "300%"; 
+        console.log("onMessageArrived: " + message.payloadString + "    Topic: " + message.destinationName); }
+        if (message.payloadString == 'ON') {
+            document.getElementById("relay_color").className = "style6";
+        }
+        else if (message.payloadString == 'OFF') {document.getElementById("relay_color").className = "style7";}
     }
     /*console.log("onMessageArrived: " + message.payloadString + "    Topic: " + message.destinationName);
     document.getElementById("messages").innerHTML = '<span>Topic: ' + message.destinationName + '  | ' + message.payloadString + '</span><br/>';
     document.getElementById("temperature").innerHTML = message.payloadString + '°C';
     document.getElementById("humidity").innerHTML = message.payloadString + '%';*/
-}
+
 
 // Called when the disconnection button is pressed
 function startDisconnect() {
@@ -88,9 +139,11 @@ function startDisconnect() {
 }
 
 function relay() {
+    
     message = new Paho.MQTT.Message("1");
     message.destinationName = "/topic/relay";
     client.send(message);
+
   }
 
   function doFail(e){

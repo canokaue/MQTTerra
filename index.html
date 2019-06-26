@@ -4,20 +4,16 @@
  * @ Authors: Andre Schlichting & Kaue Cano 
  * @ Create Time: 2019-06-25 21:01:19
  * @ Modified by: canokaue
- * @ Modified time: 2019-06-25 21:05:23
+ * @ Modified time: 2019-06-26 00:40:35
  
-Template used:
-Phantom by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	Template used:
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 
  -->
 
 <!DOCTYPE HTML>
-<!--
-
--->
-
 <!-- Icons -->
 <link rel="apple-touch-icon" sizes="57x57" href="icons/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="icons/apple-icon-60x60.png">
@@ -39,7 +35,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 <html>
 	<head>
-		<title>MQTTerra Dashboard</title>
+		<title id = "page_title">MQTTerra Dashboard</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -101,7 +97,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 										<img src="images/pic02.jpg" alt="" />
 									</span>
 									<a>
-										<h2 style="font-size:300%;" id = "temperature"> </h2>
+										<h2 style="font-size:100%;" id = "temperature">Connecting...</h2>
 										<div class="content">
 											<p>Temperature.</p>
 										</div>
@@ -112,9 +108,9 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 										<img src="images/pic03.jpg" alt="" />
 									</span>
 									<a>
-										<h2 style="font-size:300%;" id="humidity">XX %</h2>
+										<h2 style="font-size:100%;" id="humidity">Connecting...</h2>
 										<div class="content">
-											<p>Humidity.</p>
+											<p>Air humidity.</p>
 										</div>
 									</a>
 								</article>
@@ -123,9 +119,10 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 										<img src="images/pic01.jpg" alt="" />
 									</span>
 									<a href="javascript:relay();">
-										<h2>Irrigate</h2>
+										<h2 style="font-size: 170%">Irrigate</h2>
 										<div class="content">
-											<p>Open the solenoid for XX seconds, releasing aproximately XX mls of fresh water.</p>
+											<p>Toggle the solenoid opening. <br>
+											Press once to release fresh water, repeat to stop irrigation.</p>
 										</div>
 									</a>
 								</article>
@@ -134,9 +131,31 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 										<img src="images/pic05.jpg" alt="" />
 									</span>
 									<a>
-										<h2>Last10[]</h2>
-										<div class="content" id="messages">
-											
+										<h2 style="font-size: 100%" id="distance">Connecting...</h2>
+										<div class="content">
+											<p>Distance from sensor to water level.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style4">
+									<span class="image">
+										<img src="images/pic04.jpg" alt="" />
+									</span>
+									<a>
+										<h2 style="font-size: 100%" id="plant1">Connecting...</h2>
+										<div class="content">
+											<p>Soil moisture.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style8" id = "relay_color">
+									<span class="image">
+										<img src="images/pic06.jpg" alt="" />
+									</span>
+									<a>
+										<h2 style="font-size: 100%" id="relaystatus">Awaiting input...</h2>
+										<div class="content">
+											<p>Relay status.</p>
 										</div>
 									</a>
 								</article>
@@ -176,7 +195,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 								</ul>
 							</section>
 							<ul class="copyright">
-								<li>&copy; MQTTerra. All rights reserved</li><li>Desinged by: <a href="http://github.com/canokaue">canokaue</a></li>
+								<li>&copy; MQTTerra. All rights reserved</li><li>Desinged by: <a href="http://github.com/alucassch">alucassch</a> and <a href="http://github.com/canokaue">canokaue</a></li>
 							</ul>
 						</div>
 					</footer>
