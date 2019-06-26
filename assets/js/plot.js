@@ -15,11 +15,25 @@ function plot(resp) {
              mode: 'none'
          };
   
+  var initset = false;
+  var today = new Date();
+  var initx;
+  var endx;
   for (i = 0; i < resp.length; i++) { 
     //console.log(resp[i].water_level);
+
+    if (initset == false) {
+      date = new Date(resp[i].timestamp);
+      if (date.getDay() == today.getDay() && date.getMonth() == today.getMonth()) {
+        initset = true;
+        initx = resp[i].timestamp;
+      }
+    }
     xaxis.push(resp[i].timestamp);
     yaxis.push(resp[i].water_level)
   }
+
+  endx = resp[i-1].timestamp;
 
   var traceWL = {
              x: xaxis,
@@ -32,7 +46,8 @@ function plot(resp) {
   var dataWL = [ traceWL ];
 
   var layout = {
-    title: 'Measurements History'
+    title: 'Measurements History',
+     xaxis: {range: [initx, endx]},
   };
 
    Plotly.newPlot('plotdiv', dataWL, layout, {responsive: true});
