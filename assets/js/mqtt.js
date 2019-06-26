@@ -4,7 +4,7 @@
  * @ Authors: Andre Schlichting & Kaue Cano 
  * @ Create Time: 2019-06-25 21:01:19
  * @ Modified by: canokaue
- * @ Modified time: 2019-06-26 01:45:30
+ * @ Modified time: 2019-06-26 09:46:53
 
 */
 
@@ -130,8 +130,12 @@ function onMessageArrived(message) {
         console.log("onMessageArrived: " + message.payloadString + "    Topic: " + message.destinationName); }
         if (message.payloadString == 'ON') {
             document.getElementById("relay_color").className = "style6";
+            document.getElementById("io").innerHTML = "Close --";
         }
-        else if (message.payloadString == 'OFF') {document.getElementById("relay_color").className = "style7";}
+        else if (message.payloadString == 'OFF') {
+            document.getElementById("relay_color").className = "style7";
+            document.getElementById("io").innerHTML = "Open \\|/";
+        }
     }
     /*console.log("onMessageArrived: " + message.payloadString + "    Topic: " + message.destinationName);
     document.getElementById("messages").innerHTML = '<span>Topic: ' + message.destinationName + '  | ' + message.payloadString + '</span><br/>';
