@@ -75,7 +75,7 @@ function fetchdata(){
 }
 
 $(document).ready(function(){
- setInterval(fetchdata,5000);
+ setInterval(fetchdata,10000);
 });
 
 function toggle(button)
