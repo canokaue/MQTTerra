@@ -8,6 +8,7 @@
 
 */
 
+var notification = false;
 var temperatura;
 connection = false;
 
@@ -30,9 +31,9 @@ function getURLResource(path)
 };
 
 // In your case you can do something like that:
-var url = getURLResource(not_img);
+var not_ico_url = getURLResource(not_img);
 
-console.log(url);
+//console.log(not_ico_url);
 
 // Called on CONNECT click
 
@@ -134,8 +135,12 @@ function onMessageArrived(message) {
         console.log("onMessageArrived: " + message.payloadString + "    Topic: " + message.destinationName); 
         if (parseInt(message.payloadString.substring(0,2),10) > 10) {
             document.getElementById("page_title").innerHTML = "(!) MQTTerra Dashboard";
+            if (notification == false) {
                 console.log("NOTIFICACAO");
-                new Notification(not_title, { body: not_body, icon: url });
+                new Notification(not_title, { body: not_body, icon: not_ico_url });
+                notification = true;
+            }
+                
         }
         else {document.getElementById("page_title").innerHTML = "MQTTerra Dashboard";} }
     
