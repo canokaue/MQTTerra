@@ -42,7 +42,8 @@ function plot(resp) {
              fill: 'tonexty',
              type: 'line',
              mode: 'lines',
-             line: {color: '#f2849e'}
+             //GRAPH COLOR
+             line: {color: '#ae85ca'}
          };
 
   var dataWL = [ traceWL ];
