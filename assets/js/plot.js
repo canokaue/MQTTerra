@@ -48,7 +48,8 @@ function plot(resp) {
   var dataWL = [ traceWL ];
 
   var layout = {
-    title: 'Measurements History',
+    title: 'MEASUREMENTS HISTORY',
+    font: {size: 13},
      xaxis: {range: [initx, endx]},
   };
 
