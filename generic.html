@@ -4,7 +4,7 @@
  * @ Authors: Andre Schlichting & Kaue Cano 
  * @ Create Time: 2019-06-25 21:01:19
  * @ Modified by: canokaue
- * @ Modified time: 2019-06-25 21:07:10
+ * @ Modified time: 2019-06-27 01:32:25
  
 	Template used:
 	Phantom by HTML5 UP
@@ -17,7 +17,7 @@
 
 <html>
 	<head>
-		<title>Generic - Phantom by HTML5 UP</title>
+		<title>About MQTTerra </title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -33,7 +33,7 @@
 
 							<!-- Logo -->
 								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Phantom</span>
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">MQTTerra</span>
 								</a>
 
 							<!-- Nav -->
@@ -50,22 +50,40 @@
 					<nav id="menu">
 						<h2>Menu</h2>
 						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="generic.html">Ipsum veroeros</a></li>
-							<li><a href="generic.html">Tempus etiam</a></li>
-							<li><a href="generic.html">Consequat dolor</a></li>
-							<li><a href="elements.html">Elements</a></li>
+							<li><a href="index.html">Dashoard</a></li>
+							<li><a href="generic.html">About the project</a></li>
+							<li><a href="elements.html">Photos</a></li>
 						</ul>
 					</nav>
 
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>Generic Page</h1>
+							<h1>About the project</h1>
 							<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
-							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel venenatis mauris vehicula hendrerit.</p>
-							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+							<p><b>MQTTerra</b> is an IoT solution for plant/reservoir irrigation and monitoring developed using <b>ESP32 development kits</b>. <br> <br>
+
+								It tracks the temperature, soil moisture, air humidity and water distance of the irrigation apparatus via topics created using a <b>CloudMQTT 3.1.1 Broker</b>, to whom both endpoints are connected (web dashboard and ESP32 boards).
+								App-side, <b>Elipse Paho's JavaScript</b> client was implemented so the user can interact fully regardless of platform (PC, mobile, tablet...). <br> <br>
+									
+								Authors: André Schlichting (mainly backend), Kauê Cano (mainly frontend).
+							</p>
+
+							<p>This project is the final delivery of an IoT-focused program offered at <b>UFSC</b> 
+								(Federal University of Santa Catarina - Brazil) called <b>EEL7515 - Advanced Topics on Signal Processing 
+								II / Telecommunications IV</b>, mainly administered by <b>PhD Richard Demo Souza</b>. Aiming to know more about the 
+								fields of electronic sensor monitoring, data storage and IoT, we proposed to develop a monitoring system of 
+								different areas of a garden, compiling info such as the level of water in a reservoir and the quality of potted 
+								soil of plants into an SQL database, as well as MQTT topic that also ables the ESP32 boards to receive remote 
+								control instructions. Users can monitor the information through a web page in the form of a 
+								dashboard with a simple, slick design..</p>
+							
+							<p>As mentioned, MQTTerra was developed (among many other reasons such as technological benchmark, curiosity, interest in 
+								IoT and so on) to deliver on the final project of EEL7515. With that in mind, requests, issues 
+								and recommendations are welcome, but we're not actively developing MQTTerra from 2019 Q3 on.
+								For major changes, please open an issue first to discuss what you would like to change on our Github.</p>
+								
+							<p>For images of the actual hadware setup used throught time/ applications, visit the<b><a href=elements.html> photo section.</a></b></p>
 						</div>
 					</div>
 
@@ -74,7 +92,7 @@
 						<div class="inner">
 							<section>
 								<h2>Get in touch</h2>
-								<form method="post" action="#">
+								<form method="post" action="mailto:kaue@engineer.com">
 									<div class="fields">
 										<div class="field half">
 											<input type="text" name="name" id="name" placeholder="Name" />
@@ -92,23 +110,19 @@
 								</form>
 							</section>
 							<section>
-								<h2>Follow</h2>
-								<ul class="icons">
-									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
-									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
-									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+									<h2>Follow</h2>
+									<ul class="icons">
+										<li><a href="https://twitter.com/aandreelucass" class="icon brands style2 fa-twitter" target="_blank" ><span class="label">Twitter</span></a></li>
+										<li><a href="https://www.instagram.com/cano_.k/" class="icon brands style2 fa-instagram" target="_blank" ><span class="label">Instagram</span></a></li>
+										<li><a href="http://github.com/canokaue" class="icon brands style2 fa-github" target="_blank" ><span class="label">GitHub</span></a></li>
+										<li><a href="#" class="icon solid style2 fa-envelope" target="_blank" ><span class="label">Email</span></a></li>
+									</ul>
+								</section>
+								<ul class="copyright">
+									<li>&copy; MQTTerra. All rights reserved</li><li>Desinged by: <a href="http://github.com/alucassch">alucassch</a> and <a href="http://github.com/canokaue">canokaue</a></li>
 								</ul>
-							</section>
-							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</footer>
+							</div>
+						</footer>
 
 			</div>
 

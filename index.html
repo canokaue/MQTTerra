@@ -4,7 +4,7 @@
  * @ Authors: Andre Schlichting & Kaue Cano 
  * @ Create Time: 2019-06-25 21:01:19
  * @ Modified by: canokaue
- * @ Modified time: 2019-06-26 09:47:07
+ * @ Modified time: 2019-06-27 01:32:47
  
 	Template used:
 	Phantom by HTML5 UP
@@ -89,9 +89,7 @@
 								<!-- Title -->
 								<h1>Dashboard <a href="index.html">MQTTerra</a></h1>
 								<!-- Subtitle -->
-								<p>Here you can monitor the temperature and humidity of your MQQTerra apparatus in real time, as well as write to the subscribed irrigation topic, pouring water into the soil for X seconds.<div id="plotdiv"></div><form action="">
-            <input type="button" id="updateplot" value="Update Plot" style="color:blue" onclick="toggle(this);">
-        </form></p>
+								<p>Here you can monitor the temperature and humidity of your MQQTerra apparatus in real time, as well as write to the subscribed irrigation topic, pouring water into the soil for X seconds.</p>
 							</header>
 							<section class="tiles">
 								<article class="style2">
@@ -164,13 +162,17 @@
 							</section>
 						</div>
 					</div>
+					<p align = center><div id="plotdiv"></div>
+						<form align = center action="">
+							<input align ="center" type="button" id="updateplot" value="Update Plot" onclick="toggle(this);">
+						</form></p>
 
 				<!-- Footer -->
 					<footer id="footer">
 						<div class="inner">
 							<section>
 								<h2>Get in touch</h2>
-								<form method="post" action="#">
+								<form method="post" action="mailto:kaue@engineer.com">
 									<div class="fields">
 										<div class="field half">
 											<input type="text" name="name" id="name" placeholder="Name" />

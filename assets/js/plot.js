@@ -41,7 +41,8 @@ function plot(resp) {
              y: yaxis,
              fill: 'tonexty',
              type: 'line',
-             mode: 'none'
+             mode: 'lines',
+             line: {color: '#f2849e'}
          };
 
   var dataWL = [ traceWL ];
