@@ -75,20 +75,9 @@ function fetchdata(){
 }
 
 fetchdata();
-$(document).ready(function(){
- setInterval(fetchdata,10000);
-});
+
 
 function toggle(button)
             {
-              if(document.getElementById("autoupdateplot").value=="Update ON")
-              {
-                updateplot = false;
-               document.getElementById("autoupdateplot").value="Update OFF";
-              }
-              else
-              {
-                updateplot = true;
-                document.getElementById("autoupdateplot").value="Update ON";
-              }
+              fetchdata();
             }
