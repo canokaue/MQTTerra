@@ -74,6 +74,7 @@ function fetchdata(){
     }
 }
 
+fetchdata();
 $(document).ready(function(){
  setInterval(fetchdata,10000);
 });
