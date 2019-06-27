@@ -48,7 +48,7 @@ function plot(resp) {
   var dataWL = [ traceWL ];
 
   var layout = {
-    title: 'MEASUREMENTS HISTORY',
+    title: 'WATER LEVEL MEASUREMENT HISTORY',
     font: {size: 13},
      xaxis: {range: [initx, endx]},
   };
