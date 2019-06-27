@@ -9,16 +9,30 @@
 */
 
 var temperatura;
-
 connection = false;
 
 // Notification options
 Notification.requestPermission().then(function(result) {
     console.log(result);
   });
-const not_img = '/icons/alert.png';
-const not_title = 'Warning!';
-const not_body = 'Your reservoir is running low.';
+
+const not_img = "icons/alert.png";
+const not_title = "Warning!";
+const not_body = "Your reservoir is running low.";
+
+function getURLResource(path)
+{
+    // notice that index.html is the launchpath of your app
+    var url = window.location.href.replace("index.html", "");
+
+    return url + path;
+
+};
+
+// In your case you can do something like that:
+var url = getURLResource(not_img);
+
+console.log(url);
 
 // Called on CONNECT click
 
@@ -120,7 +134,8 @@ function onMessageArrived(message) {
         console.log("onMessageArrived: " + message.payloadString + "    Topic: " + message.destinationName); 
         if (parseInt(message.payloadString.substring(0,2),10) > 10) {
             document.getElementById("page_title").innerHTML = "(!) MQTTerra Dashboard";
-            new Notification(not_title, { body: not_body, icon: not_img });
+                console.log("NOTIFICACAO");
+                new Notification(not_title, { body: not_body, icon: url });
         }
         else {document.getElementById("page_title").innerHTML = "MQTTerra Dashboard";} }
     
