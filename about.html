@@ -4,7 +4,7 @@
  * @ Authors: Andre Schlichting & Kaue Cano 
  * @ Create Time: 2019-06-25 21:01:19
  * @ Modified by: canokaue
- * @ Modified time: 2019-06-27 01:54:37
+ * @ Modified time: 2019-06-27 02:09:10
  
 	Template used:
 	Phantom by HTML5 UP
@@ -14,9 +14,10 @@
  -->
 
 <!DOCTYPE HTML>
+
 <html>
 	<head>
-		<title>MQTTerra Photos</title>
+		<title>About MQTTerra </title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -46,40 +47,43 @@
 					</header>
 
 				<!-- Menu -->
-				<nav id="menu">
+					<nav id="menu">
 						<h2>Menu</h2>
 						<ul>
 							<li><a href="index.html">Dashoard</a></li>
-							<li><a href="generic.html">About the project</a></li>
-							<li><a href="elements.html">Photos</a></li>
+							<li><a href="about.html">About the project</a></li>
+							<li><a href="photos.html">Photos</a></li>
 						</ul>
 					</nav>
 
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>Photos</h1>
+							<h1>About the project</h1>
+							<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
+							<p><b>MQTTerra</b> is an IoT solution for plant/reservoir irrigation and monitoring developed using <b>ESP32 development kits</b>. <br> <br>
 
-							<!-- Photos -->
-								<section>
-									<div class="box alt">
-										<div class="row gtr-uniform">
-											<div class="col-4"><span class="image fit"><img src="photos/pic01.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="photos/pic02.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="photos/pic03.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="photos/pic04.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="photos/pic05.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="photos/pic06.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="photos/pic07.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="photos/pic08.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="photos/pic09.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="photos/pic10.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="photos/pic11.jpg" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="photos/pic12.jpg" alt="" /></span></div>
-										</div>
-									</div>
-									</section>
+								It tracks the temperature, soil moisture, air humidity and water distance of the irrigation apparatus via topics created using a <b>CloudMQTT 3.1.1 Broker</b>, to whom both endpoints are connected (web dashboard and ESP32 boards).
+								App-side, <b>Elipse Paho's JavaScript</b> client was implemented so the user can interact fully regardless of platform (PC, mobile, tablet...). <br> <br>
+									
+								Authors: André Schlichting (mainly backend), Kauê Cano (mainly frontend).
+							</p>
 
+							<p>This project is the final delivery of an IoT-focused program offered at <b>UFSC</b> 
+								(Federal University of Santa Catarina - Brazil) called <b>EEL7515 - Advanced Topics on Signal Processing 
+								II / Telecommunications IV</b>, mainly administered by <b>PhD Richard Demo Souza</b>. Aiming to know more about the 
+								fields of electronic sensor monitoring, data storage and IoT, we proposed to develop a monitoring system of 
+								different areas of a garden, compiling info such as the level of water in a reservoir and the quality of potted 
+								soil of plants into an SQL database, as well as MQTT topic that also ables the ESP32 boards to receive remote 
+								control instructions. Users can monitor the information through a web page in the form of a 
+								dashboard with a simple, slick design..</p>
+							
+							<p>As mentioned, MQTTerra was developed (among many other reasons such as technological benchmark, curiosity, interest in 
+								IoT and so on) to deliver on the final project of EEL7515. With that in mind, requests, issues 
+								and recommendations are welcome, but we're not actively developing MQTTerra from 2019 Q3 on.
+								For major changes, please open an issue first to discuss what you would like to change on our Github.</p>
+								
+							<p>For images of the actual hadware setup used throught time/ applications, visit the<b><a href=photos.html> Photos section.</a></b></p>
 						</div>
 					</div>
 
