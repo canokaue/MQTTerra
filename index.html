@@ -4,7 +4,7 @@
  * @ Authors: Andre Schlichting & Kaue Cano 
  * @ Create Time: 2019-06-25 21:01:19
  * @ Modified by: canokaue
- * @ Modified time: 2019-06-27 12:23:41
+ * @ Modified time: 2019-06-29 23:00:18
  
 	Template used:
 	Phantom by HTML5 UP
@@ -92,6 +92,41 @@
 								<p>Here you can monitor the temperature and humidity of your MQQTerra apparatus in real time, as well as write to the subscribed irrigation topic, pouring water into the soil for X seconds.</p>
 							</header>
 							<section class="tiles">
+								<article class="style1" id="irrigate">
+										<span class="image">
+											<img src="images/pic01.jpg" alt="" />
+										</span>
+										<a href="javascript:relay();">
+											<h2 style="font-size: 170%" id = "io">Interact<br>\!/</h2>
+											<div class="content">
+												<p>Toggle the solenoid opening. <br>
+												Press once to release fresh water, repeat to close the valve.</p>
+											</div>
+										</a>
+									</article>
+
+								<article class="style8" id = "relay_color">
+										<span class="image">
+											<img src="images/pic06.jpg" alt="" />
+										</span>
+										<a>
+											<h2 style="font-size: 100%" id="relaystatus">Awaiting input...</h2>
+											<div class="content">
+												<p>Relay status.</p>
+											</div>
+										</a>
+									</article>
+								<article class="style3">
+										<span class="image">
+											<img src="images/pic03.jpg" alt="" />
+										</span>
+										<a>
+											<h2 style="font-size:100%;" id="humidity">Connecting...</h2>
+											<div class="content">
+												<p>Air humidity.</p>
+											</div>
+										</a>
+									</article>
 								<article class="style2">
 									<span class="image">
 										<img src="images/pic02.jpg" alt="" />
@@ -103,29 +138,8 @@
 										</div>
 									</a>
 								</article>
-								<article class="style3">
-									<span class="image">
-										<img src="images/pic03.jpg" alt="" />
-									</span>
-									<a>
-										<h2 style="font-size:100%;" id="humidity">Connecting...</h2>
-										<div class="content">
-											<p>Air humidity.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style1" id="irrigate">
-									<span class="image">
-										<img src="images/pic01.jpg" alt="" />
-									</span>
-									<a href="javascript:relay();">
-										<h2 style="font-size: 170%" id = "io">Interact<br>\!/</h2>
-										<div class="content">
-											<p>Toggle the solenoid opening. <br>
-											Press once to release fresh water, repeat to close the valve.</p>
-										</div>
-									</a>
-								</article>
+
+
 								<article class="style5">
 									<span class="image">
 										<img src="images/pic05.jpg" alt="" />
@@ -145,17 +159,6 @@
 										<h2 style="font-size: 100%" id="plant1">Connecting...</h2>
 										<div class="content">
 											<p>Soil moisture.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style8" id = "relay_color">
-									<span class="image">
-										<img src="images/pic06.jpg" alt="" />
-									</span>
-									<a>
-										<h2 style="font-size: 100%" id="relaystatus">Awaiting input...</h2>
-										<div class="content">
-											<p>Relay status.</p>
 										</div>
 									</a>
 								</article>
