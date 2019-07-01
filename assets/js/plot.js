@@ -20,22 +20,31 @@ function plot(resp) {
   var today = new Date();
   var initx;
   var endx;
-  for (i = 0; i < resp.length; i++) { 
-    //console.log(resp[i].water_level);
+  var dict = {};
 
-    if (initset == false) {
-      date = new Date(resp[i].timestamp);
-      if (date.getDay() == today.getDay() && date.getMonth() == today.getMonth()) {
-        initset = true;
-        initx = resp[i].timestamp;
-      }
-    }
-    xaxis.push(resp[i].timestamp);
-    yaxis.push(resp[i].water_level)
+  for (i = 0; i < resp.length; i++) {
+    dict[resp[i].id] = {timestamp : resp[i].timestamp, water_level : resp[i].water_level};
   }
 
-  endx = resp[i-1].timestamp;
 
+  for (k in dict) {
+  //for (i = 1; i <= count; i++) { 
+    //console.log(k);
+
+    if (initset == false) {
+      date = new Date(dict[k].timestamp);
+      if (date.getDay() == today.getDay() && date.getMonth() == today.getMonth()) {
+        initset = true;
+        initx = dict[k].timestamp;
+      }
+    }
+    xaxis.push(dict[k].timestamp);
+    yaxis.push(dict[k].water_level)
+  }
+
+  endx = dict[k].timestamp;
+
+  //console.log(xaxis);
   var traceWL = {
              x: xaxis,
              y: yaxis,

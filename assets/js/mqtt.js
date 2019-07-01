@@ -117,26 +117,29 @@ function onMessageArrived(message) {
     if (message.destinationName == '/topic/temperature') {
             document.getElementById("temperature").innerHTML = message.payloadString;
             document.getElementById("temperature").style.fontSize = "300%"; 
-            console.log("onMessageArrived: " + message.payloadString + "    Topic: " + message.destinationName); }
+            //console.log("onMessageArrived: " + message.payloadString + "    Topic: " + message.destinationName); 
+        }
             
     else if (message.destinationName == '/topic/humidity') {
             document.getElementById("humidity").innerHTML = message.payloadString;
             document.getElementById("humidity").style.fontSize = "300%"; 
-            console.log("onMessageArrived: " + message.payloadString + "    Topic: " + message.destinationName); }
+            //console.log("onMessageArrived: " + message.payloadString + "    Topic: " + message.destinationName); 
+        }
 
     else if (message.destinationName == '/topic/plant1') {
         document.getElementById("plant1").innerHTML = message.payloadString;
         document.getElementById("plant1").style.fontSize = "300%"; 
-        console.log("onMessageArrived: " + message.payloadString + "    Topic: " + message.destinationName); }
+        //console.log("onMessageArrived: " + message.payloadString + "    Topic: " + message.destinationName); 
+    }
 
     else if (message.destinationName == '/topic/distance') {
         document.getElementById("distance").innerHTML = message.payloadString;
         document.getElementById("distance").style.fontSize = "200%"; 
-        console.log("onMessageArrived: " + message.payloadString + "    Topic: " + message.destinationName); 
+        //console.log("onMessageArrived: " + message.payloadString + "    Topic: " + message.destinationName); 
         if (parseInt(message.payloadString.substring(0,2),10) > 10) {
             document.getElementById("page_title").innerHTML = "(!) MQTTerra Dashboard";
             if (notification == false) {
-                console.log("NOTIFICACAO");
+                //console.log("NOTIFICACAO");
                 new Notification(not_title, { body: not_body, icon: not_ico_url });
                 notification = true;
             }
@@ -147,7 +150,8 @@ function onMessageArrived(message) {
     else if (message.destinationName == '/topic/relaystatus') {
         document.getElementById("relaystatus").innerHTML = message.payloadString;
         document.getElementById("relaystatus").style.fontSize = "300%"; 
-        console.log("onMessageArrived: " + message.payloadString + "    Topic: " + message.destinationName); }
+        //console.log("onMessageArrived: " + message.payloadString + "    Topic: " + message.destinationName); 
+    }
         if (message.payloadString == 'ON') {
             document.getElementById("relay_color").className = "style6";
             document.getElementById("io").innerHTML = "Close --";
